@@ -82,7 +82,6 @@ const inventory = [
 // Anonomous Functions? Another way to write functions!
 // Whats the difference? It comes down to where it is called
 
-
 // Arrow Functions
 // Arrow functions vs regular functions vs anonomous functions????
 // Lets refactor the regular function above to be an arrow function!
