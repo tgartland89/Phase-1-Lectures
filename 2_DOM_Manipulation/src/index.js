@@ -5,7 +5,7 @@
 const bookStore = {
   location: "Seattle",
   address:'333 st ne Seattle wa 99999',
-  number: 9999999999,
+  number: 303999999,
   name: 'Coding Books',
   hours: 'Monday - Friday 9am - 6pm',
   inventory: [
@@ -15,7 +15,7 @@ const bookStore = {
           author: 'Marjin Haverbeke',
           price: 10.00,
           reviews: [{userID: 1, content:'Good book, but not great for new coders'}],
-          inventory: 10,
+          inventory: 1,
           imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/51IKycqTPUL._SX218_BO1,204,203,200_QL40_FMwebp_.jpg',
           
       },
@@ -80,30 +80,132 @@ const bookStore = {
 }
 
 //array methods
+const name = ["Tom", "Jack", "Phil", "Bill"]
+// console.log(name) 
 //push adds to the end
+name.push("Wyatt")
+// console.log(name)
 //unshift adds to the start
+name.unshift("Bob")
+// console.log(name)
 //spread operator copies the array
+const newName = [...name,"jon"]
+// console.log(newName)
 //shift removes the first element
+const shiftedName = newName.shift()
+// console.log(newName)
+// console.log(shiftedName)
 //pop removes the last element
-//slice changes the array to between two indices
-//splice returns the above but keeps the the original
+const popName = newName.pop()
+// console.log(newName)
+// console.log(popName)
+//slice  returns the above but keeps the the original
+const slicedName= newName.slice(1,3)
+// console.log(slicedName)
+// console.log(newName)
+//splice changes the array to between two indices
+newName.splice(1,3)
+// console.log(newName)
+
+const newObject = {
+  name: ["Tom", "Jack", "Phil", "Bill"],
+  test: "test"
+}
+newObject.name.pop()
+// console.log(newObject)
 
 // Lets Create a .querySelector()!
+
+// const header = document.querySelector("#header")
+// console.log(header)
 // .getElementById
+const removable = document.getElementById("removable")
+// console.log(removable)
 // .getElementsByClassName()
+const classList = document.getElementsByClassName("list")
+const classList2 = document.querySelector(".list")
+// console.log(classList)
+// console.log(classList2)
 // Use .querySelectorAll to get all divs!
+const divSelector = document.querySelector("div")
+// console.log(divSelector)
+const allDiv = document.querySelectorAll("div")
+// console.log(allDiv)
 // We can then use .textcontent to change whats inside!
+removable.textContent = "HELLO"
 // Using .createElement we can create and set a new html element!
-
+const newElement = document.createElement("div")
+newElement.textContent = "This is a new element!"
+// console.log(newElement)
+classList[1].appendChild(newElement)
 // Lets use .remove on a queryselector!
+removable.remove()
+// classList[1].remove()
 // And lets clear the children using inner html!
+const booklist = document.querySelector("#book-list")
+booklist.innerHTML = ''
+booklist.appendChild(newElement)
 
+function returnDavid(){
+  return "David"
+}
+const david = returnDavid()
+// const david = "David"
 
 //* Create a function that uses a selector to get the header and add the bookStore name as its text content
-
-//* Create a function that grabs all the divs form the footer and add the book store name, address, hours and/or phone number
+function createHeader(){
+  const header = document.querySelector("header")
+  header.textContent = `${bookStore.name}`
+}
+createHeader()
+//* Create a function that creates all the divs from the footer and add the book store name, address, hours and/or phone number
+function createFooter(){
+  const footer = document.querySelector("footer")
+  const name = document.createElement("div")
+  const address = document.createElement("div")
+  const hours = document.createElement("div")
+  const number = document.createElement("div")
+  name.textContent = `${bookStore.name} . `
+  address.textContent = `${bookStore.address} . `
+  hours.textContent = `${bookStore.hours} . `
+  number.textContent = `${bookStore.number} .  `
+  footer.append(name,address,hours,number)
+}
+createFooter()
 
 // use a forEach to iterate over BookStore inventory.
+booklist.innerHTML =''
+bookStore.inventory.forEach((book)=>{
+  // console.log(book)
+  //creating elements
+  const li = document.createElement("li")
+  const title = document.createElement("h3")
+  const author = document.createElement("p")
+  const price = document.createElement("p")
+  //<img></img>
+  const img = document.createElement("img")
+  // Assign elements
+  title.textContent = book.title
+  author.textContent = book.author
+  price.textContent = book.textContent
+  img.src = book.imageUrl
+  // Showing off attaching classes
+  li.className = "List-Element"
+  //attatch elements to li
+  li.append(title,author,price,img)
+  //create and attatch the review/s
+  book.reviews.forEach((review)=> {
+    const newReview = document.createElement("p")
+    newReview.textContent = review.content
+    // DONE DO BELOW
+    // li.append(document.createElement("p").textContent=review.content)
+    li.append(newReview)
+  })
+  // append to booklist
+  booklist.append(li)
+  
+
+})
 // create li, an h3 tag, 2 p tags, and image tag.
 // Add the cardData content to the tags.
 // Append all elements to our li
