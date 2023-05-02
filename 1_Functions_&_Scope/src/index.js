@@ -71,27 +71,128 @@ const inventory = [
 
 // Pre Work Questions?
 
-
 // Function Declaration!
+function helloWorld(){
+  console.log("Hi there")
+  console.log("Hello world")
+}
 
+// helloWorld()
 // Now lets call the function
 
 // Lets make a function with a parameter
+function helloName(name){
+  return(name+"!!!")
+}
+
+const noah = helloName("Noah")
+// console.log(noah)
+helloName("John")
+
+// console.log(add(1,6))
+
+function add(num1,num2){
+  return num1+num2
+}
+// console.log(add(1,10))
 // Using the data above what sort of function can we create?
+function combineAttribute(book){
+  return book.title + " By: " + book.author
+}
+// for(let i=0; inventory.length > i ; i++){
+//   console.log(combineAttribute(inventory[i]))
+// }
+// console.log("BREAK")
+// inventory.forEach((book)=>console.log(combineAttribute(book)))
+const authors = ["a","b"]
+const titles = ["Title a", "Title b"]
+// for(let i=0; 10 > i ; i = i+1){
+//   console.log(i)
+//   // console.log(authors[i] + titles[i])
+// }
 
 // Anonomous Functions? Another way to write functions!
+const addTwo = function(num1,num2){
+  return num1+num2
+}
+// console.log(addTwo(3,6))
+
 // Whats the difference? It comes down to where it is called
+// You can call regular functions BEFORE they are created
+// You can call anonomous functions only after
+// In some languages you can overwrite a regular function, because
+// anonomous functions have no name you can't overwrite them
+
+// console.log(function(){
+//   return("Hello")
+// }())
+// const add = "add"
 
 // Arrow Functions
+// console.log((()=> 5)())
+// console.log((() => {
+//   console.log("In arrow")
+//   return 5
+// })())
+
+const arrowFunc = (test) => test+"!!!!!"
+// inventory.forEach(/*function*/)
+// console.log(arrowFunc("This is a test"))
 // Arrow functions vs regular functions vs anonomous functions????
+
 // Lets refactor the regular function above to be an arrow function!
+const arrowCombine = (book) => console.log(book.title + " By: " + book.author)
 
 // Now you try it!
 
+// forEach function
+// function bookCombine(book){
+//   console.log(book.title + " By: " + book.author)
+// }
+// inventory.forEach((book) => console.log(book.title + " By: " + book.author))
+
 // Scoping
 // Global Scope
+const myName = "David"
 // Function Scope
-// Block Scope (If, else, for, while)
+function combineLast(Lastname){
+  const functionScope = "In a function"
+  // console.log(functionScope)
+  // consolelogHi()
+
+  // Block Scope (If, else, for, while)
+  for(let i = 0; i < 5; i++){ 
+    consolelogHi()
+    function consolelogHi(){
+      consolelogBye()
+    }
+  }
+  // console.log(blockscope)
+  // console.log(i)
+  function consolelogBye(){
+    console.log("bye")
+  }
+  return myName + Lastname
+}
+function test(){
+  console.log(functionScope)
+}
+// consolelogHi()
+// const fullName = combineLast("Doan")
+// console.log(fullName)
+// test()
 
 // Callback Functions, calling a function in a function
+function callBack(newFunction){
+  //helloWorld()()
+  newFunction()
+}
 
+callBack(()=>console.log("We are in a callback"))
+// Map, forEach
+//For each will return nothing
+inventory.forEach((book)=> {console.log(book.title)})
+// console.log(each)
+
+const map = inventory.map((book)=> {})
+console.log(map)
