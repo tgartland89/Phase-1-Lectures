@@ -82,7 +82,7 @@ const bookStore = {
 //array methods
 //push adds to the end
 //unshift adds to the start
-//spread operator
+//spread operator copies the array
 //shift removes the first element
 //pop removes the last element
 //slice changes the array to between two indices
@@ -92,15 +92,19 @@ const bookStore = {
 // .getElementById
 // .getElementsByClassName()
 // Use .querySelectorAll to get all divs!
+// We can then use .textcontent to change whats inside!
+// Using .createElement we can create and set a new html element!
 
 // Lets use .remove on a queryselector!
-// And lets clear a child using inner html!
+// And lets clear the children using inner html!
+
 
 //* Create a function that uses a selector to get the header and add the bookStore name as its text content
 
 //* Create a function that grabs all the divs form the footer and add the book store name, address, hours and/or phone number
 
-//* 1. use a forEach to iterate over BookStore inventory.
-//  2. Pass the forEach an anonymous callback that takes the inventory data and creates an li, with an h3 tag, 2 p tags, and image tag.
-// 3. Add the cardData content to the tags.
-// 4. Append li to the DOM through the ul with the id of book-list
+// use a forEach to iterate over BookStore inventory.
+// create li, an h3 tag, 2 p tags, and image tag.
+// Add the cardData content to the tags.
+// Append all elements to our li
+// Append li to the DOM through the ul with the id of book-list
