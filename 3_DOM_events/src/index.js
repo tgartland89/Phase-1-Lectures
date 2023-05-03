@@ -23,6 +23,11 @@ const userInfo = {
 };
 
 // We can use . or brackets in order to get different keys from the data
+console.log(userInfo["firstName"])
+console.log(userInfo.firstName)
+for(let j = 1, j >=2, j++){
+  console.log(userInfo[`friend${j}firstName`])
+}
 
 //// We can iterate through this using a for loop!
 
