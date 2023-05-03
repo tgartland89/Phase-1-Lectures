@@ -73,20 +73,30 @@ const inventory = [
 
 
 // Function Declaration!
-
+function helloWorld(){
+console.log  ("Hi tyere")
+console.log ("Hello world")
+}
+helloWorld()
 // Now lets call the function
 
-// Lets make a function with a parameter
-// Using the data above what sort of function can we create?
-
-// Anonomous Functions? Another way to write functions!
+function helloName(name){
+    retrun(name)
+}
+helloName("Noah")
+helloName ("John")
 // Whats the difference? It comes down to where it is called
 
-
+function add (num1,num2){
+    return num1+num2
+}
 // Arrow Functions
-// Arrow functions vs regular functions vs anonomous functions????
+console.log(add(1,10))
 // Lets refactor the regular function above to be an arrow function!
+function getAuthor(book){
+    return book.title + "By"+ book.author
 
+}
 // Now you try it!
 
 // Scoping

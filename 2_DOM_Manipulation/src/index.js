@@ -102,8 +102,30 @@ const bookStore = {
 //* Create a function that uses a selector to get the header and add the bookStore name as its text content
 
 //* Create a function that grabs all the divs form the footer and add the book store name, address, hours and/or phone number
+function createFooter(){
+    const footer = document.querySelector("footer")
+    const name = document.createElement("p")
+    const address = document.createElement("p")
+    const hours = document.createElement("p")
+    const number = document.createElement("p")
+    name.textConent = '${bookStore.name}'
+    address.textContent = '${bookStore.address}'
+    hours.textContent = '${bookStore.hours}'
+    number.textContent = '${bookStore.number}'
+    footer.append(name, address, hours, number)
+
+}
+createFooter()
 
 // use a forEach to iterate over BookStore inventory.
+bookStore.inventory.forEach((book)=>{
+    // console.log(book)
+    const li = doccument.createElement("li")
+    const title = doccument.createElment("h3")
+    const author = doccument.createElement("p")
+    const price = doccument.createElement("p")
+    const img = doccument.createElement("img")
+})
 // create li, an h3 tag, 2 p tags, and image tag.
 // Add the cardData content to the tags.
 // Append all elements to our li
